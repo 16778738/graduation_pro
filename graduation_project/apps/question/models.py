@@ -43,7 +43,7 @@ class Paper(BaseModel):
     tid = models.ForeignKey(Teacher, on_delete=models.CASCADE)  # 添加外键
     subject = models.CharField('科目', max_length=20, default='')
     major = models.CharField('考卷适用专业', max_length=20)
-    examtime = models.DateTimeField()
+    exam_time = models.DateTimeField()
 
     class Meta:
         db_table = 'paper'

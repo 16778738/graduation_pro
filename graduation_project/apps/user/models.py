@@ -1,6 +1,18 @@
 from django.db import models
 from home.baseModel import BaseModel
 
+# 为性别,学院 指定备选字段
+SEX = (
+    ('男', '男'),
+    ('女', '女'),
+)
+DEPT = (
+    ('计算机与通信学院', '计算机与通信学院'),
+    ('电气与自动化学院', '电气与自动化学院'),
+    ('外国语学院', '外国语学院'),
+    ('软件学院', '软件学院'),
+)
+
 
 # Create your models here.
 class Teacher(BaseModel):
@@ -21,19 +33,6 @@ class Teacher(BaseModel):
         return self.name
 
 
-# 为性别,学院 指定备选字段
-SEX = (
-    ('男', '男'),
-    ('女', '女'),
-)
-DEPT = (
-    ('计算机与通信学院', '计算机与通信学院'),
-    ('电气与自动化学院', '电气与自动化学院'),
-    ('外国语学院', '外国语学院'),
-    ('软件学院', '软件学院'),
-)
-
-
 class Student(BaseModel):
     id = models.CharField('学号', max_length=20, primary_key=True)
     name = models.CharField('姓名', max_length=20)
@@ -51,4 +50,3 @@ class Student(BaseModel):
 
     def __str__(self):
         return self.id
-
